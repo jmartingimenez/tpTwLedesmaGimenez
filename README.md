@@ -6,7 +6,7 @@ Se asume...
 - Apache-Tomcat-8.5.20
 - Apache-Maven-3.5.0
 
-1 - Crear en MySQL el usuario 'tallerweb1' con el password 'tallerweb1'. Ejecutar la sentencia..
+1 - Crear en MySQL el usuario 'tallerweb1' con el password 'tallerweb1' y darle privilegios. Ejecutar la sentencia..
 
 GRANT ALL PRIVILEGES ON tw1.* To 'tallerweb1'@'localhost' IDENTIFIED BY 'tallerweb1';
 
