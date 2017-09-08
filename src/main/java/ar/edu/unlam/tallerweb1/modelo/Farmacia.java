@@ -26,9 +26,9 @@ public class Farmacia {
 	@OneToOne
 	private Direccion direccion;
 	
-	String nombre;
-	String telefono;
-	String diaDeTurno;	
+	private String nombre;
+	private String telefono;
+	private String diaDeTurno;	
 
 	public Farmacia(){}
 	
