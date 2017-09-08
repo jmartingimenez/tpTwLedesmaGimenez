@@ -1,0 +1,26 @@
+.recuadro
+{
+    margin-top: 10%;
+    height: 500px;
+}
+.texto
+{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn-editar
+{
+    margin-top: 25px;
+}
+
+.conteiner
+{
+ display: flex;
+ flex-direction: row;
+}
+.mas
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
