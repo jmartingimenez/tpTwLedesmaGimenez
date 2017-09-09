@@ -1,7 +1,10 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,21 +31,14 @@ public class ControladorSuma {
 	}
 	
 	@RequestMapping(path = "/validar-numeros", method = RequestMethod.POST)
-	public ModelAndView controlarResultado() {			
-		/*Revisar esta primera parte luego, se supone que en vez de 3 y 6, esas 2 
-		 * variables guardaran los inputs del user. La clase Suma ya en su constructor 
-		 * se fija si los valores son enteros o no. Si ambos no son enteros, se setearan 
-		 * como nulos*/
-		String input1 = "3";
-		String input2 = "6";//Poner un String no númerico para ver que redirecciona a error
-		
-		Suma suma = new Suma(input1, input2);
-		if(!suma.getSonNumeros()) return new ModelAndView("redirect:/error");
+	public ModelAndView controlarResultado(@ModelAttribute("suma") Suma suma, HttpServletRequest request) {			
+		suma.checkearSiSonNumeros();		
+		if(!suma.getSonNumeros()) return new ModelAndView("redirect:/error");		
 		
 		//A partir de aca, se sabe que los 2 datos ingresados son números
 		ModelMap operacion = new ModelMap();		
-		Integer valor1 = suma.getValor1();
-		Integer valor2 = suma.getValor2();
+		Integer valor1 = Integer.parseInt(suma.getValor1());
+		Integer valor2 = Integer.parseInt(suma.getValor2());
 		
 		operacion.put("valor1",valor1);
 		operacion.put("valor2", valor2);
