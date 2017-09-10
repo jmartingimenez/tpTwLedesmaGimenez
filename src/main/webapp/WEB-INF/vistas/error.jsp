@@ -9,7 +9,8 @@
 	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	</head>
 <body>
- 	<h3>No se pudo realizar la operación. Solo se admiten números enteros.</h3>
+ 	<h4>No se pudo realizar la operación. Esto puede deberse a que se envio el formulario 
+ 	con campos vacios o que alguno de ellos no sea un número (Solo se admiten enteros).</h4>
  	
  	<br/><br/><br/>
  	

@@ -11,7 +11,7 @@
 <body> 	 
 	<h3>Suma</h3>
 	<div class="container">
-		<form:form action="validar-numeros" method="POST" modelAttribute="operacion">
+		<form:form action="obtener-resultado" method="POST" modelAttribute="operacion">
 			<form:input path="valor1" type="text" class="form-control" id="valor1" placeholder="Valor 1"/>
 			<h1><div class="mas">+</div></h1>
 			<form:input path="valor2" type="text" class="form-control" id="valor2" placeholder="Valor 2"/>		

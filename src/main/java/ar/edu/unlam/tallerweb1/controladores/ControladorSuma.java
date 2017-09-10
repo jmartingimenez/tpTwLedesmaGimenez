@@ -38,7 +38,7 @@ public class ControladorSuma {
 	/* Este metodo escucha la URL validar-numeros por POST.
 	 * El método recibe un objeto Suma, el que tiene los datos ingresados en el form 
 	 * correspondiente y se corresponde con el modelAttribute definido en el tag form:form*/	
-	@RequestMapping(path = "/validar-numeros", method = RequestMethod.POST)
+	@RequestMapping(path = "/obtener-resultado", method = RequestMethod.POST)
 	public ModelAndView controlarResultado(@ModelAttribute("suma") Suma suma, HttpServletRequest request) {			
 		suma.checkearSiSonNumeros();	//Setea el booleano que dice si son o no		
 		if(!suma.getSonNumeros()) return new ModelAndView("redirect:/error");		
@@ -58,11 +58,15 @@ public class ControladorSuma {
 		return new ModelAndView("resultado", "operacion", operacion);
 	}
 	
-	// Escucha la URL /resultado por GET, y redirige a una vista.
+	/* Escucha la URL /resultado por GET, y redirige a una vista.
+	 * NOTA: Redirige a calculo porque se supone que no podes poner la url 
+	 * 'localhost:8080/proyecto-limpio-spring'/resultado' ya que estarías 
+	 * accediendo sin pasar por el formulario.*/
 	@RequestMapping(path = "/resultado", method = RequestMethod.GET)
-	public ModelAndView irAResultado(){		
-		return new ModelAndView("resultado");
+	public ModelAndView irAResultado(){	
+		return new ModelAndView("redirect:/calculo");
 	}	
+	
 	// Escucha la URL /error por GET, y redirige a una vista.
 	@RequestMapping(path = "/error", method = RequestMethod.GET)
 	public ModelAndView irAError(){
