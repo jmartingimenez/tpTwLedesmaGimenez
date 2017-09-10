@@ -1,4 +1,8 @@
 target
 .project
 .classpath
+<<<<<<< HEAD
 .settings
+=======
+target/classes/META-INF/maven/proyecto-limpio-spring/proyecto-limpio-spring/pom.properties
+>>>>>>> 64e26212184524096f5d236b8539c5587babf5c5
