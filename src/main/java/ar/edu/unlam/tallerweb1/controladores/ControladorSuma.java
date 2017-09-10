@@ -26,7 +26,7 @@ public class ControladorSuma {
 	 * termina de cargar, esta la instancia esperando el Submit. Cuando se manda el form, 
 	 * se ejecutan los setters de la clase. La clave "operacion" es para hacer la 
 	 * asociación con el modelAttribute en el formulario.*/
-	@RequestMapping(path = "/calculo", method = RequestMethod.POST)
+	@RequestMapping(path = "/calculo", method = RequestMethod.GET)
 	public ModelAndView irACalculo(){
 		ModelMap modelo = new ModelMap();
 		Suma suma = new Suma();
@@ -38,7 +38,7 @@ public class ControladorSuma {
 	/* Este metodo escucha la URL validar-numeros por POST.
 	 * El método recibe un objeto Suma, el que tiene los datos ingresados en el form 
 	 * correspondiente y se corresponde con el modelAttribute definido en el tag form:form*/	
-	@RequestMapping(path = "/obtener-resultado", method = RequestMethod.POST)
+	@RequestMapping(path = "/obtener-resultado", method = RequestMethod.GET)
 	public ModelAndView controlarResultado(@ModelAttribute("suma") Suma suma, HttpServletRequest request) {			
 		suma.checkearSiSonNumeros();	//Setea el booleano que dice si son o no		
 		if(!suma.getSonNumeros()) return new ModelAndView("redirect:/error");		

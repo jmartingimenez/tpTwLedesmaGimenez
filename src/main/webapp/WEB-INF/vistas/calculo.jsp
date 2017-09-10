@@ -7,18 +7,28 @@
 	    <link href="css/bootstrap.min.css" rel="stylesheet" >
 	    <!-- Bootstrap theme -->
 	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	    <link href="css/css2.css" rel="stylesheet">
 	</head>
 <body> 	 
-	<h3>Suma</h3>
-	<div class="container">
-		<form:form action="obtener-resultado" method="POST" modelAttribute="operacion">
+<div class="row">
+        <div class="col-md-4"></div> 
+        <div class="col-md-4 recuadro"> 
+	<h3><div class="texto">Suma</div></h3>
+	
+		<form:form action="obtener-resultado" method="GET" modelAttribute="operacion">
+		<div class="conteiner">
 			<form:input path="valor1" type="text" class="form-control" id="valor1" placeholder="Valor 1"/>
 			<h1><div class="mas">+</div></h1>
-			<form:input path="valor2" type="text" class="form-control" id="valor2" placeholder="Valor 2"/>		
+			<form:input path="valor2" type="text" class="form-control" id="valor2" placeholder="Valor 2"/>	
+			</div>	
 			<button class="btn btn-lg btn-success btn-block btn-editar" Type="Submit">Sumar</button>
+			
 		</form:form>
-	</div>
-	
+	      
+        </div> 
+        <div class="col-md-4"></div> 
+    </div>
+        
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
 	<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>

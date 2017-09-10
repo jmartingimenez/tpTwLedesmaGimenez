@@ -7,17 +7,24 @@
 	    <link href="css/bootstrap.min.css" rel="stylesheet" >
 	    <!-- Bootstrap theme -->
 	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	    <link href="css/css2.css" rel="stylesheet">
 	</head>
 <body>
+<div class="row">
+        <div class="col-md-4"></div> 
+        <div class="col-md-4 recuadro"> 
+	<h3><div class="texto">
  	<h4>No se pudo realizar la operación. Esto puede deberse a que se envio el formulario 
  	con campos vacios o que alguno de ellos no sea un número (Solo se admiten enteros).</h4>
+ 	</div></h3>
  	
  	<br/><br/><br/>
  	
 	<form:form action="calculo" method="GET">
 		<button class="btn btn-lg btn-success btn-block btn-editar" Type="Submit">Volver</button>
 	</form:form>
-	
+		</div>
+	</div>
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
 	<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>

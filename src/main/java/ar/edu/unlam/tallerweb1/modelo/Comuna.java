@@ -18,6 +18,7 @@ public class Comuna {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	
 	@OneToMany(mappedBy = "comuna", cascade = CascadeType.ALL)
 	private List<Barrio> barrios = new ArrayList<Barrio>();
 	
