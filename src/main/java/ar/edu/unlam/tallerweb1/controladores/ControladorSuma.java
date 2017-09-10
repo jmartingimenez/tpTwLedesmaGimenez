@@ -1,7 +1,5 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,11 +33,11 @@ public class ControladorSuma {
 	}
 	
 	
-	/* Este metodo escucha la URL validar-numeros por POST.
+	/* Este metodo escucha la URL obtener-resultado por POST.
 	 * El método recibe un objeto Suma, el que tiene los datos ingresados en el form 
 	 * correspondiente y se corresponde con el modelAttribute definido en el tag form:form*/	
-	@RequestMapping(path = "/obtener-resultado", method = RequestMethod.GET)
-	public ModelAndView controlarResultado(@ModelAttribute("suma") Suma suma, HttpServletRequest request) {			
+	@RequestMapping(path = "/obtener-resultado", method = RequestMethod.POST)
+	public ModelAndView controlarResultado(@ModelAttribute("suma") Suma suma) {			
 		suma.checkearSiSonNumeros();	//Setea el booleano que dice si son o no		
 		if(!suma.getSonNumeros()) return new ModelAndView("redirect:/error");		
 		
@@ -63,7 +61,16 @@ public class ControladorSuma {
 	 * 'localhost:8080/proyecto-limpio-spring'/resultado' ya que estarías 
 	 * accediendo sin pasar por el formulario.*/
 	@RequestMapping(path = "/resultado", method = RequestMethod.GET)
-	public ModelAndView irAResultado(){	
+	public ModelAndView irAResultadoNoPermitido(){	
+		return new ModelAndView("redirect:/calculo");
+	}
+	
+	/* Escucha la URL /obtener-resultado por GET, y redirige a una vista.
+	 * NOTA: Redirige a calculo porque se supone que no podes poner la url 
+	 * 'localhost:8080/proyecto-limpio-spring'/obtener-resultado' ya que estarías 
+	 * accediendo sin pasar por el formulario.*/
+	@RequestMapping(path = "/obtener-resultado", method = RequestMethod.GET)
+	public ModelAndView irAObtenerResultadoNoPermiTido(){	
 		return new ModelAndView("redirect:/calculo");
 	}	
 	
