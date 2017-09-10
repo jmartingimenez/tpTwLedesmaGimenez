@@ -30,11 +30,13 @@ public class Suma{
 		return sonNumeros;
 	}
 
+	//Setea el booleano sonNumeros
 	public void checkearSiSonNumeros() {
 		if(esParseable(valor1, valor2)) this.sonNumeros = true;
 		else this.sonNumeros = false;
 	}
 	
+	//Revisa si son números
 	private static boolean esParseable(String valor1, String valor2){
 		boolean sonParseables = true;
 		try{
@@ -46,6 +48,7 @@ public class Suma{
 		return sonParseables;
 	}
 	
+	//Hace la suma o retorna null
 	public Integer getResultado(){
 		if(esParseable(valor1, valor2))
 			return Integer.parseInt(valor1) + Integer.parseInt(valor2);
