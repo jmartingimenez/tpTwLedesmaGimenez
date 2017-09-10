@@ -1,6 +1,3 @@
-target/
-WebContent/
+target
 .project
 .classpath
-.settings
-
