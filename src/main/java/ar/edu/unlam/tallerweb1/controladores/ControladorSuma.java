@@ -26,7 +26,7 @@ public class ControladorSuma {
 	 * termina de cargar, esta la instancia esperando el Submit. Cuando se manda el form, 
 	 * se ejecutan los setters de la clase. La clave "operacion" es para hacer la 
 	 * asociación con el modelAttribute en el formulario.*/
-	@RequestMapping(path = "/calculo", method = RequestMethod.GET)
+	@RequestMapping(path = "/calculo", method = RequestMethod.POST)
 	public ModelAndView irACalculo(){
 		ModelMap modelo = new ModelMap();
 		Suma suma = new Suma();
