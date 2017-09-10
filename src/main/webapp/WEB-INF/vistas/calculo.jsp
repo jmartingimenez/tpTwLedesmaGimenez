@@ -15,7 +15,7 @@
         <div class="col-md-4 recuadro"> 
 	<h3><div class="texto">Suma</div></h3>
 	
-		<form:form action="obtener-resultado" method="GET" modelAttribute="operacion">
+		<form:form action="obtener-resultado" method="POST" modelAttribute="operacion">
 		<div class="conteiner">
 			<form:input path="valor1" type="text" class="form-control" id="valor1" placeholder="Valor 1"/>
 			<h1><div class="mas">+</div></h1>
