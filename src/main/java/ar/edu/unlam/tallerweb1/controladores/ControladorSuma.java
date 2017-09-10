@@ -21,7 +21,11 @@ public class ControladorSuma {
 		return new ModelAndView("redirect:/calculo");
 	}
 	
-	// Escucha la URL /calculo por GET, y redirige a una vista.
+	/*Escucha la URL /calculo por GET, y redirige a una vista. El objeto de tipo Suma 
+	 * se va a usar para guardar los inputs del usuario. Supongo que cuando la página 
+	 * termina de cargar, esta la instancia esperando el Submit. Cuando se manda el form, 
+	 * se ejecutan los setters de la clase. La clave "operacion" es para hacer la 
+	 * asociación con el modelAttribute en el formulario.*/
 	@RequestMapping(path = "/calculo", method = RequestMethod.GET)
 	public ModelAndView irACalculo(){
 		ModelMap modelo = new ModelMap();
@@ -30,9 +34,13 @@ public class ControladorSuma {
 		return new ModelAndView("calculo", modelo);
 	}
 	
+	
+	/* Este metodo escucha la URL validar-numeros por POST.
+	 * El método recibe un objeto Suma, el que tiene los datos ingresados en el form 
+	 * correspondiente y se corresponde con el modelAttribute definido en el tag form:form*/	
 	@RequestMapping(path = "/validar-numeros", method = RequestMethod.POST)
 	public ModelAndView controlarResultado(@ModelAttribute("suma") Suma suma, HttpServletRequest request) {			
-		suma.checkearSiSonNumeros();		
+		suma.checkearSiSonNumeros();	//Setea el booleano que dice si son o no		
 		if(!suma.getSonNumeros()) return new ModelAndView("redirect:/error");		
 		
 		//A partir de aca, se sabe que los 2 datos ingresados son números

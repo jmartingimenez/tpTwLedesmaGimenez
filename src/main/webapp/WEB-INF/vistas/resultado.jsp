@@ -9,8 +9,18 @@
 	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	</head>
 <body>
- 	"El resultado de sumar ${operacion.valor1} y ${operacion.valor2} da ${operacion.resultado}"
- 	
+ 	<!-- Una suerte de if/else. La idea de esto que evitar que si en la URL pones
+ 	'/resultado' sin haber llenado el form, no te salga el msj a medio llenar-->
+ 	<c:choose>
+ 		<c:when test="${not empty operacion}">
+ 			"El resultado de sumar ${operacion.valor1} y ${operacion.valor2} 
+ 			da ${operacion.resultado}"
+ 		</c:when>
+ 		<c:otherwise>
+ 			Deben ingresarse números en el formulario primero.
+ 		</c:otherwise>		
+ 	</c:choose>
+ 	 	
  	<br/><br/><br/>
  	
 	<form:form action="calculo" method="GET">
