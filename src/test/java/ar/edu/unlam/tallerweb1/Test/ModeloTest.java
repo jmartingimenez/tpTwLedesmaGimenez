@@ -60,7 +60,12 @@ public class ModeloTest extends SpringTest{
 	misFarmacias =session.createCriteria(Farmacia.class).add(Restrictions.eq("diaDeTurno", "Martes")).list();
 	
 	assertThat(misFarmacias).hasSize(1);	
-
+	assertThat(misFarmacias.get(0).getNombre()).isEqualTo("Farmacity");
+	assertThat(misFarmacias.get(0).getNombre()).isNotEqualTo("CruzVerde");
+	
+	assertThat(misFarmacias.get(0).getDiaDeTurno()).isEqualTo("Martes");
+	assertThat(misFarmacias.get(0).getDiaDeTurno()).isNotEqualTo("Lunes");
+	
 	
 	}
 
@@ -104,7 +109,17 @@ public void test2() { //Hacer un Test que busque todas las farmacias de una call
 	
 	assertThat(misFarmacias).hasSize(2);	
 
+	assertThat(misFarmacias.get(0).getNombre()).isEqualTo("Farmacity");
+	assertThat(misFarmacias.get(1).getNombre()).isEqualTo("Dr Ahorro");
 	
+	
+	assertThat((misFarmacias.get(0).getDireccion()).getCalle()).isEqualTo("Almafuerte");
+	assertThat((misFarmacias.get(1).getDireccion()).getCalle()).isEqualTo("Almafuerte");
+	
+	assertThat((misFarmacias.get(0).getDireccion()).getCalle()).isNotEqualTo("Concordia");
+	assertThat((misFarmacias.get(1).getDireccion()).getCalle()).isNotEqualTo("Concordia");
+	
+
 	}
 
 
@@ -151,7 +166,18 @@ public void test3() { //Hacer un Test que busque todas las farmacias de un barri
 	misFarmacias =session.createCriteria(Farmacia.class).createAlias("direccion","d").createAlias("d.barrio","b").add(Restrictions.eq("b.nombre", "Floresta")).list();
 	
 	assertThat(misFarmacias).hasSize(2);	
-
+	
+	assertThat(misFarmacias.get(0).getNombre()).isEqualTo("Farmacity");
+	assertThat(misFarmacias.get(1).getNombre()).isEqualTo("Dr Ahorro");
+	
+	assertThat(((misFarmacias.get(0).getDireccion()).getBarrio().getNombre())).isEqualTo("Floresta");
+	assertThat(((misFarmacias.get(1).getDireccion()).getBarrio().getNombre())).isEqualTo("Floresta");
+	
+	assertThat(((misFarmacias.get(0).getDireccion()).getBarrio().getNombre())).isNotEqualTo("San Telmo");
+	assertThat(((misFarmacias.get(1).getDireccion()).getBarrio().getNombre())).isNotEqualTo("San Telmo");
+	
+	assertThat((misFarmacias.get(0).getDireccion()).getCalle()).isEqualTo("Haiti");
+	assertThat((misFarmacias.get(1).getDireccion()).getCalle()).isEqualTo("Haiti");
 	
 	}
 
