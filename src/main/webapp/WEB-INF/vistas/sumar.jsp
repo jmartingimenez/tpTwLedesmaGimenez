@@ -6,29 +6,23 @@
 	
 	</head>
 <body>
-<div class="row">
-        <div class="col-md-4"></div> 
-        <div class="col-md-4 recuadro"> 
-	<h3><div class="texto">
 	<c:choose>
- 		<c:when test = "${not empty resultado}">
- 		
- 			"El resultado de sumar ${valor1} y ${valor2} da ${resultado}"<br/>
- 			Proba editar los dos paths para obtener distintos resultados<br/>
- 			(Solo se admiten números enteros)
- 			
+ 		<c:when test = "${not empty resultado}"> 		
+ 			<h4>
+	 			"El resultado de sumar ${valor1} y ${valor2} da ${resultado}"<br/>
+	 			Proba editar los dos paths para obtener distintos resultados<br/>
+	 			(Solo se admiten números enteros)
+ 			</h4> 			
  		</c:when>
  		<c:otherwise>
- 			Trabajo practico para Taller Web I.<br/>
- 			Alumnos: Ledesma Mauro, Gimenez Jonatan<br/>
- 			Ingresar dos path en la URL para obtener la suma. <br/>
- 			Ejemplo: 'http://localhost:8080/proyecto-limpio-spring/sumar/1/2'<br/>
- 			(Solo se admiten números enteros)
+	 		<h4>	
+	 			Trabajo practico para Taller Web I.<br/>
+	 			Alumnos: Ledesma Mauro, Gimenez Jonatan<br/>
+	 			Ingresar dos path en la URL para obtener la suma. <br/>
+	 			Ejemplo: 'http://localhost:8080/proyecto-limpio-spring/sumar/1/2'<br/>
+	 			(Solo se admiten números enteros)
+	 		</h4>	
  		</c:otherwise>		
  	</c:choose>
-	</div></h3> 
-	</div>
-	</div>
-	
 </body>
 </html>

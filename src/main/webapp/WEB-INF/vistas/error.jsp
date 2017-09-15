@@ -2,21 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-	
-	</head>
 <body>
-<div class="row">
-        <div class="col-md-4"></div> 
-        <div class="col-md-4 recuadro"> 
-	<h3><div class="texto">
- 	<h4>No se pudo realizar la operación. Esto puede deberse a que  
+	<h4>No se pudo realizar la operación. Esto puede deberse a que  
  	alguno de los dos últimos valores del path no sea un número<br/>
  	(Solo se admiten enteros).</h4><br/>
- 	<a href="<c:url value="/" />">Volver</a>
- 	</div></h3>
-		</div>
-	</div>
-	
+ 	<a href="<c:url value="/" />">Volver</a>	
 </body>
 </html>
