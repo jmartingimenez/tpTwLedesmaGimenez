@@ -7,7 +7,7 @@
 	    <link href="css/bootstrap.min.css" rel="stylesheet" >
 	    <!-- Bootstrap theme -->
 	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	    <link href="css/css2.css" rel="stylesheet">
+	    
 	</head>
 <body>
 <div class="row">
@@ -16,9 +16,11 @@
 	<h3><div class="texto">
 	<c:choose>
  		<c:when test = "${not empty resultado}">
+ 		
  			"El resultado de sumar ${valor1} y ${valor2} da ${resultado}"<br/>
  			Proba editar los dos paths para obtener distintos resultados<br/>
  			(Solo se admiten números enteros)
+ 			
  		</c:when>
  		<c:otherwise>
  			Trabajo practico para Taller Web I.<br/>

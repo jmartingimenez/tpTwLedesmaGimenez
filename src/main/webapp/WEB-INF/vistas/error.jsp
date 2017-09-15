@@ -7,7 +7,7 @@
 	    <link href="css/bootstrap.min.css" rel="stylesheet" >
 	    <!-- Bootstrap theme -->
 	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	    <link href="css/css2.css" rel="stylesheet">
+	   
 	</head>
 <body>
 <div class="row">
