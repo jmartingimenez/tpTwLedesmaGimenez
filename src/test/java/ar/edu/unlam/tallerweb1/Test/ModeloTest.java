@@ -6,7 +6,6 @@ import ar.edu.unlam.tallerweb1.modelo.Barrio;
 import ar.edu.unlam.tallerweb1.modelo.Direccion;
 import ar.edu.unlam.tallerweb1.modelo.Farmacia;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
@@ -15,7 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 
  
-
+@SuppressWarnings("unchecked")
 public class ModeloTest extends SpringTest{
 	
 	private Farmacia farmacia1,farmacia2,farmacia3;

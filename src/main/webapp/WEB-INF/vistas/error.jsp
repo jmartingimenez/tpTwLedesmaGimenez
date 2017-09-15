@@ -14,15 +14,11 @@
         <div class="col-md-4"></div> 
         <div class="col-md-4 recuadro"> 
 	<h3><div class="texto">
- 	<h4>No se pudo realizar la operación. Esto puede deberse a que se envio el formulario 
- 	con campos vacios o que alguno de ellos no sea un número (Solo se admiten enteros).</h4>
+ 	<h4>No se pudo realizar la operación. Esto puede deberse a que se 
+ 	alguno de los dos últimos valores del path no sea un número<br/>
+ 	(Solo se admiten enteros).</h4><br/>
+ 	<a href="<c:url value="/" />">Volver</a>
  	</div></h3>
- 	
- 	<br/><br/><br/>
- 	
-	<form:form action="calculo" method="GET">
-		<button class="btn btn-lg btn-success btn-block btn-editar" Type="Submit">Volver</button>
-	</form:form>
 		</div>
 	</div>
 	<!-- Placed at the end of the document so the pages load faster -->
