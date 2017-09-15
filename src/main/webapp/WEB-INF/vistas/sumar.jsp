@@ -24,7 +24,7 @@
  			Trabajo practico para Taller Web I.<br/>
  			Alumnos: Ledesma Mauro, Gimenez Jonatan<br/>
  			Ingresar dos path en la URL para obtener la suma. <br/>
- 			Ejemplo: 'http://localhost:8080/proyecto-limpio-spring/1/2'<br/>
+ 			Ejemplo: 'http://localhost:8080/proyecto-limpio-spring/sumar/1/2'<br/>
  			(Solo se admiten números enteros)
  		</c:otherwise>		
  	</c:choose>

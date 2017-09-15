@@ -14,7 +14,7 @@
         <div class="col-md-4"></div> 
         <div class="col-md-4 recuadro"> 
 	<h3><div class="texto">
- 	<h4>No se pudo realizar la operación. Esto puede deberse a que se 
+ 	<h4>No se pudo realizar la operación. Esto puede deberse a que  
  	alguno de los dos últimos valores del path no sea un número<br/>
  	(Solo se admiten enteros).</h4><br/>
  	<a href="<c:url value="/" />">Volver</a>
